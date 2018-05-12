@@ -77,10 +77,10 @@ Git当初设定的目标：
 `已跟踪的文件是指本来就被纳入版本控制管理的文件，在上次快照中有它们的记录，工作一段时间后，它们的状态可能是未更新，已修改或者已放入暂存区。而所有其他文件都属于未跟踪文件。它们既没有上次更新时的快照，也不在当前的暂存区域。初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改。`
 
 状态的提示语：
-untracked `Untracked files`
-unmodified
-modified `Changes not staged for commit`
-staged  `Changes to be committed`
+- untracked `Untracked files`
+- unmodified
+- modified `Changes not staged for commit`
+- staged  `Changes to be committed`
 
 ```Git
 bogon:static vivo$ git status
@@ -106,20 +106,20 @@ Untracked files:
 ```
 
 
-git status 检查当前文件状态
-git log 查看提交历史
-git add `filename` 跟踪新文件，已跟踪文件放到暂存区
-git add . 跟踪所有文件
-git checkout `filename` 放弃更改工作目录中当前修改的文件
-git reset `filename` 放弃工作目录中当前暂存的文件到未暂存或未追踪
-git diff 查看已暂存和未暂存的更新
-git diff 查看工作目录中当前文件未暂存的文件与暂存区域快照直接的差异，也就是修改之后还没有暂存起来的变化内容。**如果未暂存的文件全部都add到暂存区域，git diff是没有变化的**
-git diff --cached || --staged 当前工作目录中已暂存文件与上次提交时的快照之间的差异    **或者通过开发工具比较**
-git commit 进入Vim输入本次提交的说明(默认的提交消息包含最后一次运行 git status 的输出)->i->input commit message->esc-> : ->wq->enter
-git commit -v 进入Vim输入本次提交的说明(将修改差异的每一行都包含到注释中来)
-git commit -m "commit message" 直接提交说明
-git commit -a -m "commit message" Git会自动把所有已经跟踪过的文件暂存起来一并提交直接加到staged区域，从而跳过 git add 步骤，但是不能添加untracked文件
-git commit -a 进入Vim输入本次提交的说明，把已经跟踪过的文件暂存到暂存区域，但是不能添加untracked文件
+- git status 检查当前文件状态
+- git log 查看提交历史
+- git add `filename` 跟踪新文件，已跟踪文件放到暂存区
+- git add . 跟踪所有文件
+- git checkout `filename` 放弃更改工作目录中当前修改的文件
+- git reset `filename` 放弃工作目录中当前暂存的文件到未暂存或未追踪
+- git diff 查看已暂存和未暂存的更新
+- git diff 查看工作目录中当前文件未暂存的文件与暂存区域快照直接的差异，也就是修改之后还没有暂存起来的变化内容。**如果未暂存的文件全部都add到暂存区域，git diff是没有变化的**
+- git diff --cached || --staged 当前工作目录中已暂存文件与上次提交时的快照之间的差异    **或者通过开发工具比较**
+- git commit 进入Vim输入本次提交的说明(默认的提交消息包含最后一次运行 git status 的输出)->i->input commit message->esc-> : ->wq->enter
+- git commit -v 进入Vim输入本次提交的说明(将修改差异的每一行都包含到注释中来)
+- git commit -m "commit message" 直接提交说明
+- git commit -a -m "commit message" Git会自动把所有已经跟踪过的文件暂存起来一并提交直接加到staged区域，从而跳过 git add 步骤，但是不能添加untracked文件
+- git commit -a 进入Vim输入本次提交的说明，把已经跟踪过的文件暂存到暂存区域，但是不能添加untracked文件
 
 
 
